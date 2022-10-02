@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.checked {
+    color: orange;
+  }
+
+.profile{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.ruler{
+    transform: rotate(45deg);    
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.single-chart {
+    width: 120px;
+
+}
+
+.circular-chart {
+display: block;
+margin: 10px auto;
+max-width: 80%;
+max-height: 250px;
+}
+
+.circle-bg {
+fill: none;
+stroke: #eee;
+stroke-width: 3.8;
+}
+
+.circle {
+fill: none;
+stroke-width: 2.8;
+stroke-linecap: round;
+animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+0% {
+    stroke-dasharray: 0 100;
+}
+}
+
+.circular-chart.orange .circle {
+stroke: #ff9f00;
+}
+
+.circular-chart.blue .circle {
+stroke: #3c9ee5;;
+}
+
+.circular-chart.purple .circle {
+stroke: #a968dc;
+}
+
+.percentage {
+fill: #666;
+font-family: sans-serif;
+font-size: 0.5em;
+text-anchor: middle;
+}
+
+
+.hamburger{
+    cursor:pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    transition: all 0.25s;
+}
+
+.hamburger-top
+,.hamburger-middle,
+.hamburger-bottom{
+    position: absolute;
+    top: 10;
+    right: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+.hamburger-middle{
+    transform: translateY(7px);
+}
+.hamburger-bottom{
+    transform: translateY(14px);
+}
+
+.open{
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .hamburger-middle{
+    display: none;
+}
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
